@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devyani Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0a192f;
+      color: whitesmoke;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 10%;
+      background: #0a192f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .type-logo {
+      display: inline-block;
+      color: #64ffda;
+      font-weight: 700;
+      border-right: 2px solid #64ffda;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2.5s steps(10, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 110px }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .navbar {
+      display: flex;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin: 0 15px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #64ffda;
+    }
+
+    section {
+      padding: 80px 10% 40px;
+      min-height: 100vh;
+    }
+
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .home-content {
+      max-width: 600px;
+      flex: 1;
+    }
+
+    .home-content h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .home-content h3 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #64ffda;
+      margin-bottom: 15px;
+    }
+
+    .home-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn-box a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #64ffda;
+      color: #0a192f;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 5px;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .btn-box a:hover {
+      background-color: white;
+      color: #0a192f;
+    }
+
+    .home-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .home-img img {
+      height: 400px;
+      width: 50%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      transition: transform 0.5s ease;
+      z-index: 1;
+    }
+
+    .home-img:hover img {
+      transform: scale(1.05);
+    }
+ .home-sci {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.home-sci a {
+  color: whitesmoke;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.home-sci a:hover {
+  color: #64ffda;
+  transform: scale(1.2);
+}
+    .section-title {
+      font-size: 36px;
+      color: #64ffda;
+      margin-bottom: 20px;
+    }
+
+    .about p, .hobbies ul {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 10px;
+      max-width: 400px;
+      margin-top: 30px;
+    }
+.skill-card {
+  background-color: #122a45;
+  padding: 15px 25px;
+  color: #64ffda;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid #64ffda;
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(100, 255, 218, 0.4);
+}
+
+    
+    }
+
+    .home-sci {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .home-sci a {
+      color: whitesmoke;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .home-sci a:hover {
+      color: #64ffda;
+      transform: scale(1.2);
+    }
+
+    .animated-square {
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #33ccff, #9966ff);
+      transform: rotate(45deg);
+      animation: rotateGlow 4s linear infinite;
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(45deg) scale(1);
+        box-shadow: 0 0 5px #33ccff, 0 0 15px #9966ff;
+      }
+      50% {
+        transform: rotate(45deg) scale(1.1);
+        box-shadow: 0 0 20px #33ccff, 0 0 40px #9966ff;
+      }
+      100% {
+        transform: rotate(45deg) scale(1);
+        box-shadow: 0 0 5px #33ccff, 0 0 15px #9966ff;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .home {
+        flex-direction: column;
+        text-align: center;
+      }
+      .home-img img {
+        width: 70%;
+      }
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+     
+
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo"><span class="type-logo">Devyani.</span></a>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🏠 Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h2>Hi, I'm Devyani Holkar</h2>
+      <h3>Frontend Developer</h3>
+      <p>Passionate frontend developer skilled in HTML, CSS, JavaScript, Bootstrap, and React. I love crafting responsive user interfaces and solving real-world UI/UX problems.</p>
+      <div class="btn-box">
+        <a href="#">Hire Me</a>
+        <a href="#">Let's Talk</a>
+      </div>
+    </div>
+    <div class="home-img">
+      <img src="myimg.jpg" alt="Devyani's Photo" />
+    </div>
+    <!-- Social Icons -->
+<div class="home-sci">
+  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+  </section>
+
+  <!-- 👩‍💻 About Section -->
+  <section class="about" id="about" style="background-color: #102841;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px;">
+      
+      <!-- Left: About Text -->
+      <div style="flex: 1; min-width: 300px;">
+        <h2 class="section-title">About Me</h2>
+        <p>Hello! I'm <strong>Devyani Holkar</strong>, a Frontend Developer based in India. I design and build responsive, beautiful, and user-friendly websites using HTML, CSS, JavaScript, and React.</p>
+        <p>I successfully completed my first internship at <strong>Saiket Systems</strong>, where I worked for 1 month on real-world frontend projects. During this internship, I contributed to UI development, responsive design fixes, and collaborated with a team to improve website performance and design consistency.</p>
+        <p>I enjoy bringing ideas to life in the browser and focusing on intuitive UI/UX.</p>
+      </div>
+
+      <!-- Right: Animated Gradient Squares -->
+      <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+        <div style="display: grid; grid-template-columns: repeat(2, 100px); gap: 20px;">
+          <div class="animated-square"></div>
+          <div class="animated-square"></div>
+          <div class="animated-square"></div>
+          <div class="animated-square"></div>
+        </div>
+      </div>
+<hr>
+    </div>
+  </section>
+<!-- 💼 Skills Section -->
+<section class="skills" id="skills" style="background-color: #0f2239;">
+  <h2 style="margin-left: 100px;" class="section-title">My Skills</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">Bootstrap</div>
+    <div class="skill-card">React</div>
+    <div class="skill-card">GitHub</div>
+    <div class="skill-card">Responsive Design</div>
+    <div class="skill-card">UI/UX</div>
+  </div>
+
+<hr>
+<!-- 🚀 Projects Section -->
+<section style="margin-top:20px;" id="projects" style="background-color: #0f2239; padding: 80px 10% 40px;">
+ <h2 class="section-title" style="text-align: center;">My Projects</h2>
+
+
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px;">
+    
+    <!-- Card 1 -->
+    <div style="background-color: #122a45; border-radius: 10px; width: 300px; overflow: hidden; box-shadow: 0 0 10px rgba(100, 255, 218, 0.2); transition: transform 0.3s;">
+      <img src="20250625_162804.jpg" alt="AI Learning Website" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3 style="color: #64ffda;">AI Learning Website</h3>
+        <p style="margin: 10px 0; font-size: 14px;">An interactive AI site built with HTML, CSS & JS. Responsive design and basic chatbot logic.</p>
+        <a href="#" target="_blank" style="color: #64ffda; text-decoration: none;">🔗 View Project</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background-color: #122a45; border-radius: 10px; width: 300px; overflow: hidden; box-shadow: 0 0 10px rgba(100, 255, 218, 0.2); transition: transform 0.3s;">
+      <img src="20250625_162928.jpg" alt="Cristiano Murphy Site" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3 style="color: #64ffda;">Cristiano Murphy Website</h3>
+        <p style="margin: 10px 0; font-size: 14px;">Tribute site designed with animation, transitions, and player bio details.</p>
+        <a href="#" target="_blank" style="color: #64ffda; text-decoration: none;">🔗 View Project</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background-color: #122a45; border-radius: 10px; width: 300px; overflow: hidden; box-shadow: 0 0 10px rgba(100, 255, 218, 0.2); transition: transform 0.3s;">
+      <img src="20250625_162718.jpg" alt="Satlkar Website" style="width: 100%; height: 180px; object-fit: cover;">
+      <div style="padding: 20px;">
+        <h3 style="color: #64ffda;">Satlkar Website</h3>
+        <p style="margin: 10px 0; font-size: 14px;">Informative static site with clean structure and mobile-friendly layout.</p>
+        <a href="#" target="_blank" style="color: #64ffda; text-decoration: none;">🔗 View Project</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- 📞 Contact Section - Two Column Layout -->
+<section  style="margin-top:50px; border:3px solid skyblue;" id="contact" style="background-color: #0a192f; color: #fff; padding: 80px 10%;">
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: flex-start;">
+    
+    <!-- Left: Contact Info -->
+    <div style="flex: 1; min-width: 280px;">
+      <h2 class="section-title">Get In Touch</h2>
+      <div style="margin-top: 30px;">
+        <p><i class="fas fa-map-marker-alt" style="color: #64ffda; margin-right: 10px;"></i><strong>Address</strong><br>Washi, Osmanabad, Maharashtra 413503</p>
+        <p style="margin-top: 20px;"><i class="fas fa-phone-alt" style="color: #64ffda; margin-right: 10px;"></i><strong>Let's Talk</strong><br><a href="tel:+919876543210" style="color: #64ffda; text-decoration: none;">+91 9146716414</a></p>
+        <p style="margin-top: 20px;"><i class="fas fa-envelope" style="color: #64ffda; margin-right: 10px;"></i><strong>Email</strong><br><a href="mailto:devyaniholkar@email.com" style="color: #64ffda; text-decoration: none;">devyaniholkar@email.com</a></p>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div style="flex: 1; min-width: 300px;">
+      <h2 class="section-title">Send Us A Message</h2>
+      <form style="margin-top: 30px;">
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+          <input type="text" placeholder="First Name" required style="flex: 1; padding: 12px; border: none; border-radius: 5px;">
+          <input type="text" placeholder="Last Name" required style="flex: 1; padding: 12px; border: none; border-radius: 5px;">
+        </div>
+        <input type="email" placeholder="Your Email" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 5px;">
+        <input type="text" placeholder="Phone Number" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: none; border-radius: 5px;">
+        <textarea placeholder="Write your message" required style="width: 100%; padding: 12px; height: 120px; margin-bottom: 20px; border: none; border-radius: 5px;"></textarea>
+        <button type="submit" style="background-color: #64ffda; color: #0a192f; border: none; padding: 12px 25px; border-radius: 5px; font-weight: 600; cursor: pointer;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <!-- 🌐 Professional Footer Section -->
+<footer style="background-color: #0a192f; color: #cbd5e1; padding: 60px 10% 30px; font-size: 15px;margin-top: 30px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 40px;">
+    
+    <!-- Left: Logo and Description -->
+    <div style="flex: 1; min-width: 250px;">
+      <h3 style="color: white; display: flex; align-items: center;">
+        <span style="display: inline-block; background: linear-gradient(135deg, #a855f7, #ec4899); color: white; font-weight: bold; padding: 8px 12px; border-radius: 6px; margin-right: 10px;">DH</span>
+        Devyani Holkar
+      </h3>
+      <p style="margin-top: 15px; line-height: 1.7;">Creative Frontend Developer crafting elegant and functional interfaces with HTML, CSS, JavaScript, and React.</p>
+    </div>
+
+    <!-- Middle: Quick Links -->
+    <div style="flex: 1; min-width: 200px;">
+      <h4 style="color: #64ffda; margin-bottom: 10px; border-bottom: 2px solid #64ffda; display: inline-block;">Quick Links</h4>
+      <ul style="list-style: none; margin-top: 15px;">
+        <li><a href="#home" style="color: inherit; text-decoration: none;">Home</a></li>
+        <li><a href="#about" style="color: inherit; text-decoration: none;">About</a></li>
+        <li><a href="#skills" style="color: inherit; text-decoration: none;">Skills</a></li>
+        <li><a href="#projects" style="color: inherit; text-decoration: none;">Projects</a></li>
+      </ul>
+    </div>
+
+    <!-- Right: Connect Links -->
+    <div style="flex: 1; min-width: 200px;">
+      <h4 style="color: #64ffda; margin-bottom: 10px; border-bottom: 2px solid #64ffda; display: inline-block;">Connect</h4>
+      <ul style="list-style: none; margin-top: 15px;">
+        <li><a href="https://www.linkedin.com/" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn</a></li>
+        <li><a href="https://github.com/" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" style="color: inherit; text-decoration: none;">Instagram</a></li>
+        <li><a href="mailto:your.email@example.com" style="color: inherit; text-decoration: none;">Email</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div style="text-align: center; border-top: 1px solid #334155; padding-top: 20px;">
+    <p>&copy; 2025 Devyani Holkar. All rights reserved.</p>
+    <p style="margin-top: 5px;">Made with <span style="color: #f472b6;">&#10084;</span> and <span style="color: #38bdf8;">&lt;/&gt;</span> in India.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
